@@ -48,7 +48,7 @@ namespace PictureAnalysis
             //ld.MergeImagesAndDrawLines(neighbors);
 
             
-
+            /*
             st.Reset();
             st.Start();
             NeighbourhoodCoherenceFilter neighbourhoodCoherenceFilter = new NeighbourhoodCoherenceFilter(neighbors, Const.neighborsToCheck, Const.neighborsCondition);
@@ -57,7 +57,7 @@ namespace PictureAnalysis
             Console.WriteLine("AFTER FILTER");
             Console.WriteLine("pairs Count: " + filteredPairs.Count + "\nin time: " + st.ElapsedMilliseconds.ToString());
             //ld.MergeImagesAndDrawLines(filteredPairs);
-
+            */
             
             Console.WriteLine("RANSAC IN PROGRESS");
             st.Reset();
@@ -66,7 +66,7 @@ namespace PictureAnalysis
             ITransform transform = new PerspectiveTransform();
             Ransac ransac = new Ransac(Const.iterationNumber, transform, Const.maxError);
             TransformFilter transformFilter = new TransformFilter(ransac);
-            List<KeyValuePair<KeyPoint, KeyPoint>> ransacPairs = transformFilter.Filter(filteredPairs);
+            List<KeyValuePair<KeyPoint, KeyPoint>> ransacPairs = transformFilter.Filter(neighbors);
             st.Stop();
             Console.WriteLine("AFTER RANSCAC");
             Console.WriteLine("pairs Count: " + ransacPairs.Count + "\nin time: " + st.ElapsedMilliseconds.ToString());

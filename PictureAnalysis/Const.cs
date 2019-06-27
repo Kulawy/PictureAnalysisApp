@@ -25,14 +25,14 @@ namespace PictureAnalysis
         
         
         //RUN PARAMETERS:
-        public static readonly string imgName01 = "car1";
-        public static readonly string imgName02 = "car2";
+        public static readonly string imgName01 = "tab1";
+        public static readonly string imgName02 = "tab2";
 
         public static readonly int neighborsToCheck = 5;
         public static readonly int neighborsCondition = 4;
 
-        public static readonly int maxError = 3;
-        public static readonly int iterationNumber = 150000;
+        public static readonly int maxError = 20;
+        public static readonly int iterationNumber = 15000;
 
         
 
